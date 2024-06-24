@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .main-title {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px #ccc;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            overflow: hidden;
+            position: relative;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            border-color: transparent; /* Change border color to transparent */
+        }
+        .card img {
+            height: 250px; /* Ensure the image covers the entire card */
+            width: 100%;
+            object-fit: cover;
+        }
+        .card-body {
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            padding: 20px;
+        }
+        .card a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .card a:hover {
+            color: #007bff;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: transparent; /* Change to transparent on hover */
+            transition: height 0.3s;
+        }
+        .card:hover::before {
+            height: 0; /* Reduce height to 0 on hover */
+        }
+        .card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: transparent; /* Ensure bottom border is transparent */
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center my-5">
+        <h1 class="display-4 main-title">My Project</h1>
+        <div class="row my-4">
+            <div class="col-md-6 mb-4">
+                <a href="resume.html" class="text-decoration-none">
+                    <div class="card">
+                        <img src="resume1.jpg" class="card-img-top" alt="Resume">
+                        <div class="card-body">
+                            <h5 class="card-title">Resume</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 mb-4">
+                <a href="COR.html" class="text-decoration-none">
+                    <div class="card">
+                        <img src="corLogo.jpg" class="card-img-top" alt="COR">
+                        <div class="card-body">
+                            <h5 class="card-title">Certificate of Registration (COR)</h5>
+                          
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6 mb-4">
+                <a href="restau.html" class="text-decoration-none">
+                    <div class="card">
+                        <img src="restauLogo.jpg" class="card-img-top" alt="Restaurant">
+                        <div class="card-body">
+                            <h5 class="card-title">Restaurant</h5>
+                           
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 mb-4">
+                <a href="sari.html" class="text-decoration-none">
+                    <div class="card">
+                        <img src="sariLogo.jpg" class="card-img-top" alt="Sari-Sari Store">
+                        <div class="card-body">
+                            <h5 class="card-title">Sari-Sari Store</h5>
+                           
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

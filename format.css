@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.tagaytaylogo, .cctlogo {
+    flex: 0 0 auto;
+}
+
+.Title {
+    flex: 1;
+    text-align: center;
+    background: white;
+    color: #800000;
+    font-size: 16px;
+    padding: 10px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    }
+	
+	th, t1{
+    border: 1px solid #ddd;
+    text-align: center;
+    }

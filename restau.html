@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+    <style>
+        body {
+            height: 100%;
+            background-color: #333;
+            color: whitesmoke;
+            font-size: 16px;
+            font-family: Sans-Serif;
+        }
+        h1 {
+            font-size: 32px;
+        }
+        h2 {
+            font-size: 26px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        p {
+            margin: 0 0 15px;
+            line-height: 24px;
+            color: gainsboro;
+        }
+        a {
+            color: dodgerblue;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+        a:hover {
+            color: tomato;
+        }
+        .container {
+            max-width: 960px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tabs {
+            position: relative;
+            display: flex;
+            height: auto;
+            min-height: 100vh;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+        }
+        .tab-content {
+            flex: 1;
+        }
+        .tab-content label {
+            display: block;
+            box-sizing: border-box;
+            height: 40px;
+            padding: 10px;
+            text-align: center;
+            background: #9768D1;
+            cursor: pointer;
+        }
+        .tab-content label:hover {
+            background: #7B52AB;
+        }
+        .single-content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 40px;
+        padding: 20px;
+        border-radius: 0 0 8px 8px;
+        background: #553285;
+        opacity: 0;
+        overflow: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; /* Adjust as needed */
+    }
+
+    .product {
+        width: 200px; /
+        margin-bottom: 20px; 
+    }
+	
+	 #orderButton {
+			display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: #9768D1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+	.product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+		
+		
+        .single-content img {
+            float: center;
+            max-width: 100%;
+            height: 250px;
+            border-radius: 8px;
+        }
+        .tab-content [type=radio] {
+            display: none;
+        }
+        [type=radio]:checked ~ label {
+            background: #553285;
+            z-index: 2;
+        }
+        [type=radio]:checked ~ label ~ .single-content {
+            z-index: 1;
+            opacity: 1;
+
+        }
+@media screen and (max-width: 767px) {
+            .tabs {
+                min-height: auto;
+            }
+        }
+
+@media screen and (max-width: 480px) {
+            .tabs {
+                min-height: 580px;
+            }
+            .tab-content label {
+                height: 60px;
+            }
+            .single-content {
+                top: 60px;
+            }
+            .single-content img {
+                float: center;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+		.tab-button {
+            background-color: #9768D1;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+			height: 40px;
+            padding: 5px 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+		<!--
+		 @media screen and (max-width: 767px) {
+            .tabs {
+                min-height: auto;
+                flex-direction: column;    for alignment
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .tab-content label {
+                padding: 5px; /* Adjusted padding */
+            }
+        }
+		-->
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <center><h1>Main Menu</h1></center>
+
+        <div class="tabs">
+            <div class="tab-content">
+                <input type="radio" id="tab-1" name="tab-contents" checked>
+                <label for="tab-1">Main Dish</label>
+                <div class="single-content">
+				<center><h1> PLEASE SELECT QUANTITY YOU WANT TO ORDER</h1></center><BR>
+                   <div class="product">
+                        <center><img src="FB_IMG_17102126661105324.jpg" /></center>
+                        <center><h2>Rice Curry</h2></center>
+                        <center><h3 class="price">Php 100</h3></center>
+                        <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+                        <center><h3>Quantity</h3></center>
+                    </div>
+                   <div class="product">
+                        <center><img src="FB_IMG_17102127153126130.jpg" /></center>
+                        <center><h2>Steak</h2></center>
+                        <center><h3 class="price">Php 200</h3></center>
+                        <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+						 <center><h3>Quantity</h3></center>
+                    </div>
+                    <div class="product">
+                        <center><img src="FB_IMG_17102127171886766.jpg" /></center>
+                        <center><h2>Baked Salmon</h2></center>
+                        <center><h3 class="price">Php 150</h3></center>
+                        <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+                         <center><h3>Quantity</h3></center>
+                    </div>
+                    <div class="product">
+                        <center><img src="FB_IMG_17102127190478986.jpg" /></center>
+                        <center><h2>Fried Scallops</h2></center>
+                        <center><h3 class="price">Php 250</h3></center>
+                        <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+                         <center><h3>Quantity</h3></center><br>
+                    </div>
+					<center><button class="tab-button">Submit Order</button></center>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <input type="radio" id="tab-2" name="tab-contents">
+                <label for="tab-2">Vegetables</label>
+                <div class="single-content">
+				<center><h1> PLEASE SELECT QUANTITY YOU WANT TO ORDER</h1></center><BR>
+				<div class="product">
+                    <center><img src="FB_IMG_17102127275210570.jpg" /></center>
+                    <center><h2>Roasted Brocolli</h2></center>
+                    <center><h3 class="price">Php 70</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+                <div class="product">
+                    <center><img src="FB_IMG_17102127299480321.jpg" /></center>
+                    <center><h2>Roasted Asparagus</h2></center>
+                    <center><h3 class="price">Php 80</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+                <div class="product">
+                    <center><img src="FB_IMG_17102127318011498.jpg" /></center>
+                    <center><h2>Fried Roast Bean</h2></center>
+                    <center><h3 class="price">Php 100</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+				<center><button class="tab-button">Submit Order</button></center>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <input type="radio" id="tab-3" name="tab-contents">
+                <label for="tab-3">Deserts</label>
+                <div class="single-content">
+				<center><h1> PLEASE SELECT QUANTITY YOU WANT TO ORDER</h1></center><BR>
+				<div class="product">
+                   <center> <img src="FB_IMG_17102127211380873.jpg"/></center>
+					<center><h2>Strawbery Cheesecake</h2></center>
+					<center><h3 class="price">Php 120</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+					
+					<div class="product">
+                   <center><img src="FB_IMG_17102127232764417.jpg" /></center>
+					<center><h2>Cookies and Cream Pops</h2></center>
+					<center><h3 class="price">Php 130</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+					<div class="product">
+                    <center><img src="FB_IMG_17102127254934103.jpg" /></center>
+					<center><h2>Ice Cream with Syrup</h2></center>
+					<center><h3 class="price">Php 100</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+				<center><button class="tab-button">Submit Order</button></center>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <input type="radio" id="tab-4" name="tab-contents">
+                <label for="tab-4">Drinks</label>
+                <div class="single-content">
+				<center><h1> PLEASE SELECT QUANTITY YOU WANT TO ORDER</h1></center><BR>
+				<div class="product">
+                    <center><img src="FB_IMG_17102127406435928.jpg" /></center>
+					<center><h2>Strawbery Cocktail</h2></center>
+					<center><h3 class="price">Php 120</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+					<div class="product">
+                    <center><img src="FB_IMG_17102127424645586.jpg" /></center>
+					<center><h2>Fresh Lemonade</h2></center>
+					<center><h3 class="price">Php 120</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+					<div class="product">
+                    <center><img src="FB_IMG_17102127445630415.jpg" /></center>
+					<center><h2>Pineapple Smoothie</h2></center>
+					<center><h3 class="price">Php 120</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+				<center><button class="tab-button">Submit Order</button></center>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <input type="radio" id="tab-5" name="tab-contents">
+                <label for="tab-5">Add-ons</label>
+                <div class="single-content">
+				<center><h1> PLEASE SELECT QUANTITY YOU WANT TO ORDER</h1></center><BR>
+				<div class="product">
+                    <center><img src="FB_IMG_17102127337885445.jpg" /></center>
+					<center><h2>Lime Rice</h2></center>
+					<center><h3 class="price">Php 80</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+				<div class="product">
+                    <center><img src="FB_IMG_17102127358005294.jpg" /></center>
+					<center><h2>Mac Shrimp</h2></center>
+					<center><h3 class="price">Php 100</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+				<div class="product">
+                    <center><img src="FB_IMG_17102127387149742.jpg" /></center>
+					<center><h2>Baked Potato</h2></center>
+					<center><h3 class="price">Php 120</h3></center>
+                    <center><input type="number" class="quantity" name="quantity" value="0" min="0"></center>
+					 <center><h3>Quantity</h3></center>
+                </div>
+				<center><button class="tab-button">Submit Order</button></center>
+                </div>
+            </div>
+			
+			<div class="tab-content">
+                <input type="radio" id="tab-6" name="tab-contents">
+                <label for="tab-6">ORDER LIST</label>
+                <div class="single-content">
+				<center><h1> LIST OF ITEMS YOU ORDERED:</h1></center><BR>
+				<div id="orderList"></div>
+        <h3 id="totalAmount"></h3>
+		</div>
+                </div>
+            </div>
+
+        </div>
+	<button position = "hide" id="orderButton"></button>
+		 <button id="refreshButton">Refresh</button>
+<div id="orderList"></div>
+        <h3 id="totalAmount"></h3>
+		</div>
+    </div>
+    <script>
+
+        window.addEventListener('DOMContentLoaded', () => {
+		const handleTabButtonClick = () => {
+            document.getElementById('orderButton').click();
+        };
+
+        // Add event listeners to tab buttons
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(tabButton => {
+            tabButton.addEventListener('click', handleTabButtonClick);
+        });
+
+            document.getElementById('orderButton').addEventListener('click', () => {
+                const products = document.querySelectorAll('.product');
+                let ordersList = '<ul>';
+
+                let total = 0;
+
+                products.forEach(product => {
+                    const quantityInput = product.querySelector('.quantity');
+                    const productName = product.querySelector('h2').textContent;
+                    const priceElement = product.querySelector('.price');
+                    const price = parseFloat(priceElement.textContent.replace('Php ', ''));
+                    const quantity = parseInt(quantityInput.value);
+
+                    if (quantity > 0) {
+                        const subtotal = quantity * price;
+                        total += subtotal;
+                        ordersList += `<li>${productName}: ${quantity} x Php ${price.toFixed(2)} = Php ${subtotal.toFixed(2)}</li>`;
+                    }
+					
+                });
+				
+				
+				
+
+                ordersList += '</ul>';
+
+                const orderListDiv = document.getElementById('orderList');
+                orderListDiv.innerHTML = ordersList;
+
+                const totalAmountDiv = document.getElementById('totalAmount');
+                totalAmountDiv.textContent = `Total: Php ${total.toFixed(2)}`;
+				
+				const orderListPopup = document.getElementById('orderListPopup');
+                orderListPopup.innerHTML = ordersList;
+                orderListPopup.style.display = 'block'; // Display the order list
+
+				
+            });
+        });
+		document.getElementById('refreshButton').addEventListener('click', () => {
+                window.location.reload();
+        });
+    </script>
+</body>
+</html>
